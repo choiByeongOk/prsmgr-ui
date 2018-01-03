@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/main/java=EUC-KR
+encoding//src/main/java/com/tmax/prosync/so/ColumnsList.java=UTF-8
+encoding//src/main/java/com/tmax/prosync/so/DbsList.java=UTF-8
+encoding//src/main/java/com/tmax/prosync/so/GroupsList.java=UTF-8
+encoding//src/main/java/com/tmax/prosync/so/ParametersEdit.java=UTF-8
+encoding//src/main/java/com/tmax/prosync/so/TablesList.java=UTF-8
+encoding//src/test/java=EUC-KR
+encoding/<project>=EUC-KR
+separateDerivedEncodings=true
