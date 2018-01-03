@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.tmax.proobject</groupId>
+    <artifactId>proobject-meta</artifactId>
+    <version>${proobject.version}</version>
+    <packaging>pom</packaging>
+
+    <name>proobject-meta</name>
+
+    <properties>
+        <skip.test>true</skip.test>
+        <maven.test.skip>${skip.test}</maven.test.skip>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <proobject.version>7.0.0.0</proobject.version>
+        <jeus.version>8.0.0.b126</jeus.version>
+        <sysmaster.version>170504_1734</sysmaster.version>
+        <sysmaster.classifier>base</sysmaster.classifier>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- ProObject 7 Project Dependency Management -->
+                <!-- Common Dependencies -->
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-util</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-core</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-logger</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-model</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+    
+                <!-- Runtime Dependencies -->
+                   
+            	<dependency>
+                   	<groupId>com.tmax.proobject</groupId>
+            		<artifactId>proobject-scheduler</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-batch</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-monitoring</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-dataobject</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-network</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-promapper</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-di</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-runtime</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-runtime-war</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+    
+                <!-- ProMiner Dependencies -->
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-prominer</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-prominer-service</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-prominer-dto</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+    
+                <!-- Runtime Example Dependencies -->
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-example-event</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-example-dto</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-example-service</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+    
+                <!-- Runtime Tool Dependencies -->
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-srcgen-dto</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-srcgen</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-client</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-tool</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>commons-cli</groupId>
+                    <artifactId>commons-cli</artifactId>
+                    <version>1.2</version>
+                </dependency>
+    
+                <!-- DevServer Dependencies -->
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-devserver-dto</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-devserver</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-buildserver-dto</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-buildserver</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-deployserver-dto</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-deployserver</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-devutil</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+    
+                <!-- Manager Dependencies -->
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-manager-dto</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-manager</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+
+                <!-- TestServer Dependencies -->
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-testserver-dto</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.proobject</groupId>
+                    <artifactId>proobject-testserver</artifactId>
+                    <version>${proobject.version}</version>
+                </dependency>
+            <!-- ProObject 7 Project Dependency Management END -->
+            
+            <!-- Tmax Products Dependency Management -->
+                <!-- JEUS Dependencies -->
+                <dependency>
+                    <groupId>com.tmax.jeus</groupId>
+                    <artifactId>jeus-servlet</artifactId>
+                    <version>${jeus.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.jeus</groupId>
+                    <artifactId>jeus-session-spi</artifactId>
+                    <version>${jeus.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.jeus</groupId>
+                    <artifactId>jeusapi</artifactId>
+                    <version>${jeus.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.tmax.jeus</groupId>
+                    <artifactId>jeus-network</artifactId>
+                    <version>${jeus.version}</version>
+                </dependency>
+			    <dependency>
+			        <groupId>com.tmax.jeus</groupId>
+			        <artifactId>jeus-tm</artifactId>
+			        <version>${jeus.version}</version>
+			    </dependency>
+	            <dependency>
+		            <groupId>com.tmax.jeus</groupId>
+		            <artifactId>jeus-websocket</artifactId>
+                    <version>${jeus.version}</version>
+		        </dependency>
+                <!-- JEUS Dependencies END -->
+                
+                <!-- Tibero Dependencies -->
+			    <dependency>
+			        <groupId>com.tmax.tibero</groupId>
+			        <artifactId>tibero-jac</artifactId>
+			        <version>6.0.133341</version>
+			    </dependency>
+                <!-- Tibero Dependencies END -->
+                
+                <!-- SysMaster Dependencies -->
+                <dependency>
+			        <groupId>com.tmax.sysmaster</groupId>
+			        <artifactId>sysmaster-distribution</artifactId>
+			        <version>${sysmaster.version}</version>
+			        <classifier>${sysmaster.classifier}</classifier>
+			    </dependency>
+                <!-- SysMaster Dependencies END -->
+            <!-- Tmax Products Dependency Management END -->
+            
+            <!-- Common Dependency Management -->
+                <!--
+                    Web Application Framework 인 ProObject 가 Web 의 특징을 사용하기 위해 기본으로 사용하는 Library.
+                    Java EE 의 기본 클래스들을 담고 있다.
+                    사용처  : ProObject Runtime Project.
+                    License : Apache 2.0
+                -->
+                <dependency>
+                    <groupId>javax</groupId>
+                    <artifactId>javaee-api</artifactId>
+                    <version>7.0</version>
+                    <scope>provided</scope>
+                </dependency>
+                <!--
+                    Dependency Injection 관련 코드가 정의된 Library.
+                    사용처  : proobject-di
+                    License : Apache 2.0
+                -->
+			    <dependency>
+			        <groupId>javax.inject</groupId>
+			        <artifactId>javax.inject</artifactId>
+			        <version>1</version>
+			    </dependency>
+                <!--
+                    실제 코딩량을 줄여줄 수 있는 다양한 API 를 제공하는 Library.
+                    Throwable 의 stackTrace 를 출력하거나, 방어코딩, 멀티맵, 바이맵, 비교자 등의 기능을 제공한다.
+                    사용처  : ProObject Project.
+                    License : Apache 2.0
+                -->
+                <dependency>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                    <version>18.0</version>
+                </dependency>
+                <!--
+                    JSON 의 marshal / unmarshal 을 위해 사용하는 Library.
+                    사용처  : proobject-promapper
+                    License : Apache 2.0
+                -->
+                <dependency>
+                    <groupId>com.google.code.gson</groupId>
+                    <artifactId>gson</artifactId>
+                    <version>2.8.0</version>
+                </dependency>
+                <!--
+                    사용처  : proobject-srcgen
+                    License : Apache 2.0
+                -->
+                <dependency>
+                    <groupId>org.freemarker</groupId>
+                    <artifactId>freemarker</artifactId>
+                    <version>2.3.20</version>
+                </dependency>
+                <!--
+                    XML 의 marshal / unmarshal 을 위해 사용하는 Library.
+                    사용처  : proobject-promapper
+                    License : Apache 2.0
+                -->
+                <dependency>
+                    <groupId>org.codehaus.woodstox</groupId>
+                    <artifactId>woodstox-core-asl</artifactId>
+                    <version>4.4.1</version>
+                </dependency>
+                <!--
+                    JAXB Runtime Library.
+                    XML 로 작성된 Configuration 을 불러오거나 저장하기 위해 사용한다.
+                    사용처  : proobject-core, proobject-model
+                    License : Apache 2.0
+                -->
+                <dependency>
+                    <groupId>org.jvnet.jaxb2_commons</groupId>
+                    <artifactId>jaxb2-basics-runtime</artifactId>
+                    <version>0.9.0</version>
+                </dependency>
+                <!--
+                    Job Scheduling 을 담당하는 Library.
+                    사용처  : proobject-scheduler
+                    License : Apache 2.0
+                -->
+                <dependency>
+			        <groupId>org.quartz-scheduler</groupId>
+			        <artifactId>quartz</artifactId>
+			        <version>2.2.1</version>
+		        </dependency>
+            <!-- Common Dependency Management END -->
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>**/*</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/include-resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.sql</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <!--
+                        mvn install (Maven 의 Install Phase) 를 사용할 수 있도록 만들어주는 플러그인.
+                    -->
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.4</version>
+                    <inherited>true</inherited>
+                </plugin>
+                <plugin>
+                    <!-- JavaDoc 을 만들기 위해 사용하는 플러그인. -->
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.10.4</version>
+                    <inherited>true</inherited>
+                    <configuration>
+                        <source>1.7</source>
+                        <verbose>true</verbose>
+                        <linksource>true</linksource>
+                        <locale>ko_KR</locale>
+                        <encoding>UTF-8</encoding>
+                        <charset>UTF-8</charset>
+                        <docencoding>UTF-8</docencoding>
+                        <useStandardDocletOptions>false</useStandardDocletOptions>
+                        <additionalparam>-Xdoclint:none</additionalparam>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>attach-javadocs-install</id>
+                            <goals>
+                                <goal>install</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+		        <plugin>
+		            <groupId>org.apache.maven.plugins</groupId>
+		            <artifactId>maven-site-plugin</artifactId>
+		            <version>3.3</version>
+		            <configuration>
+		                <reportPlugins>
+		                    <plugin>
+		                        <groupId>org.apache.maven.plugins</groupId>
+		                        <artifactId>maven-javadoc-plugin</artifactId>
+		                        <reportSets>
+		                            <reportSet>
+		                                <id>aggregate</id>
+		                                <reports>
+		                                    <report>aggregate</report>
+		                                </reports>
+		                            </reportSet>
+		                        </reportSets>
+		                    </plugin>
+		                </reportPlugins>
+		            </configuration>
+		        </plugin>
+                <plugin>
+                    <!--
+                        실제 컴파일을 수행하는 플러그인. 여기서는 encoding 설정과, JDK 버전을 명시하기 위해 사용한다.
+                    -->
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version> <!-- JDK 1.7 컴파일 버그 해결을 위해 3.1 버전이상을 써야한다. -->
+                    <inherited>true</inherited>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <!--
+                        빌드 진행시, JVM 에 특정한 Arguement 를 넣고 싶은 경우에 사용하는 플러그인.
+                        필요한 경우 <configuration><argLine>내용</argLine></configuration>  을 추가하여 사용한다.
+                        물론, profile 에서 필요한 내용을 설정해도 동일한 효과를 낸다.
+                    -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.18.1</version>
+                </plugin>
+                <plugin>
+                    <!--
+                        proobject-core 전용 플러그인으로, Configuration 관련한 XML을 대상으로 JAXB 를 이용하기 위해 사용하는 플러그인.
+                        NamingSpace 가 없는(참조 관계가 없는) XML을 대상으로 삼기 적합하기에 사용한다.
+                    -->
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>jaxb2-maven-plugin</artifactId>
+                    <version>1.5</version>
+                </plugin>
+                <plugin>
+                    <!--
+                        jaxb2-maven-plugin 로 생성된 소스코드들을 복사하기 위해 사용하는 플러그인.
+                    -->
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>1.9.1</version>
+                    <inherited>true</inherited>
+                    <executions>
+                        <execution>
+                            <phase>generate-sources</phase>
+                            <goals>
+                                <goal>add-source</goal>
+                            </goals>
+                            <configuration>
+                                <sources>
+                                    <source>target/generated-sources/jaxb</source>
+                                </sources>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <!-- Nexus 로 Deploy 하기 위해 사용하는 플러그인. -->
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.1</version>
+                    <inherited>true</inherited>
+                </plugin>
+                <plugin>
+                    <!-- 배포, 설치시 소스를 함께 배포할지 여부를 설정하는 플러그인. -->
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.3</version>
+                    <inherited>true</inherited>
+                    <!-- <executions> <execution> <id>attach-sources</id> <goals> <goal>jar</goal> 
+                        </goals> </execution> </executions> -->
+                </plugin>
+                <plugin>
+                    <!--
+                        Maven 으로 JAR 를 작성할 때, 옵션을 작성하여 넣을 수 있도록 해주는 플러그인.
+                        Version 을 출력해주는 Class 를 집어넣거나, Manifest 에 정보를 삽입할 수 있도록 해준다.
+                    -->
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.4</version>
+                    <inherited>true</inherited>
+                    <configuration>
+                        <classifier>${proobject.classifier}</classifier>
+                        <archive>
+                            <manifest>
+                                <addClasspath>true</addClasspath>
+                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                                <mainClass>com.tmax.proobject.Version</mainClass>
+                            </manifest>
+                            <manifestSections>
+                                <manifestSection>
+                                    <name>${project.artifactId}</name>
+                                    <manifestEntries>
+                                        <module>${build.module}</module>
+                                        <version>${proobject.version}.${build.version}</version>
+                                        <build-time>${maven.build.timestamp}</build-time>
+                                        <branch>${build.branch}</branch>
+                                        <info-token>build-time,branch</info-token>
+                                    </manifestEntries>
+                                </manifestSection>
+                            </manifestSections>
+                        </archive>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <!--
+                        Maven 빌드 시, 생성된 jar, war 파일 뒤에 Build Number 를 붙일 수 있도록 해주는 플러그인. 
+                        현재 SCM 연동이 전혀 되어 있지 않으므로, 제대로 적용되지 않으나, 추후 제대로 된 설정이 필요하다.
+                    -->
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>buildnumber-maven-plugin</artifactId>
+                    <version>1.3</version>
+                    <inherited>true</inherited>
+                    <configuration>
+                        <shortRevisionLength>10</shortRevisionLength>
+                        <doCheck>false</doCheck>
+                        <doUpdate>false</doUpdate>
+                        <revisionOnScmFailure>true</revisionOnScmFailure>
+                        <getRevisionOnlyOnce>true</getRevisionOnlyOnce>
+                        <useLastCommittedRevision>true</useLastCommittedRevision>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>create</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <!--
+                        proobject-model 등과 같이 namespace 가 있는 XML(참조관계가 있는 경우)을 대상으로 Source 
+                        Generation 을 하기 위해 사용한다.
+                    -->
+                    <groupId>org.jvnet.jaxb2.maven2</groupId>
+                    <artifactId>maven-jaxb2-plugin</artifactId>
+                    <version>0.12.1</version>
+                    <inherited>true</inherited>
+                    <configuration>
+                        <schemaDirectory>src/main/resources/schemas</schemaDirectory>
+                        <generateDirectory>target/generated-sources/jaxb</generateDirectory>
+                        <markGenerated>true</markGenerated>
+                        <removeOldOutput>true</removeOldOutput>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <!--
+                        Source Generation 시, XML 파일로부터 Java Class 를 생성하기 위해 사용하는 플러그인. 
+                        주로 proobject-srcgen 프로젝트에서 사용한다.
+                    -->
+                    <groupId>org.eclipse.xtend</groupId>
+                    <artifactId>xtend-maven-plugin</artifactId>
+                    <version>2.6.0</version>
+                    <inherited>true</inherited>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>compile</goal>
+                                <goal>testCompile</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>target/generated-sources/main/xtend</outputDirectory>
+                                <testOutputDirectory>target/generated-sources/test/xtend</testOutputDirectory>
+                                <encoding>UTF-8</encoding>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!--
+                    This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.
+                -->
+                <plugin>
+                    <!--
+                        Maven 프로젝트에서 오류가 나는 것을 방지하기 위해서만 사용한다. Eclipse M2E 전용 설정이므로, 변경하지 않아도 무방하다.
+                    -->
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>
+                                            org.codehaus.mojo
+                                        </groupId>
+                                        <artifactId>
+                                            build-helper-maven-plugin
+                                        </artifactId>
+                                        <versionRange>
+                                            [1.3,)
+                                        </versionRange>
+                                        <goals>
+                                            <goal>add-test-resource</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+
+        <plugins>
+            <plugin>
+                <!--
+                    JAR 패키징시, 생성된 JAR 파일들을 복사하거나, Dependency 가 있는 JAR 들을 함께 복사해주는 역할을 하는 플러그인.
+                    빌드시, 모든 프로젝트에서 이 플러그인을 사용한다.
+                -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <inherited>true</inherited>
+                <executions>
+                    <execution>
+                        <id>copy-bundle</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>${project.artifactId}</artifactId>
+                                    <version>${proobject.version}</version>
+                                    <classifier>${proobject.classifier}</classifier>
+                                    <type>${project.packaging}</type>
+                                    <overWrite>true</overWrite>
+                                </artifactItem>
+                            </artifactItems>
+                            <outputDirectory>../BUILD/dist/target/bundles</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <!--Dependency 가 있는 JAR들의 복사가 필요한 경우 이 주석을 해제하여 사용한다. -->
+                    <!--execution> <id>copy-dependencies</id> <phase>install</phase> <goals> 
+                        <goal>copy-dependencies</goal> </goals> <configuration> <outputDirectory>${project.build.directory}/dependencies</outputDirectory> 
+                        <overWriteIfNewer>true</overWriteIfNewer> </configuration> </execution -->
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>proobject7-release</id>
+            <name>ProObject7 Release</name>
+            <url>http://192.168.2.23:8081/nexus/content/repositories/proobject7-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>proobject-snapshot</id>
+            <name>ProObject7 Snapshot</name>
+            <url>http://192.168.2.23:8081/nexus/content/repositories/proobject7-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>
